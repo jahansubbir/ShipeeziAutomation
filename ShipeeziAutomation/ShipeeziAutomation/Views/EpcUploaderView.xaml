@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="ShipeeziAutomation.Views.EpcUploaderView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ShipeeziAutomation.Views" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Height="450" Width="800">
+    <UserControl.Resources>
+        <sys:Double x:Key="ButtonMinHeight">45</sys:Double>
+        <sys:Double x:Key="ButtonMaxHeight">50</sys:Double>
+        <SolidColorBrush x:Key="ButtonBackground" Color="Transparent">
+            
+        </SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonForeground" Color="SteelBlue"></SolidColorBrush>
+    </UserControl.Resources>
+    <Grid>
+       
+        <md:Card Margin="10">
+            <Grid>
+                <TextBlock Text="UPLOAD EPC" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,30,0,0" 
+                           FontSize="15" FontWeight="Bold" Foreground="SteelBlue"></TextBlock>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="10">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Margin="10">
+            <TextBox x:Name="DataSource" VerticalAlignment="Center" HorizontalAlignment="Center"
+                     MinWidth="200" MaxWidth="400" md:HintAssist.Hint="Excel Data Source"
+                     MinHeight="40" MaxHeight="50"
+                     
+                     Style="{DynamicResource MaterialDesignOutlinedTextBox}"></TextBox>
+                        <Button x:Name="BrowseDataSource" Content="Browse"
+                                MinHeight="{DynamicResource ButtonMinHeight}" MaxHeight="50"
+                                MinWidth="120" MaxWidth="150"
+                                Background="{DynamicResource ButtonBackground}" Foreground="{DynamicResource ButtonForeground}"
+                                Margin="10,0,0,0"></Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                Margin="10">
+                        <TextBox x:Name="FolderSource" VerticalAlignment="Center" HorizontalAlignment="Center"
+                     MinWidth="200" MaxWidth="400" md:HintAssist.Hint="EPC Folder Source"
+                     MinHeight="40" MaxHeight="50"
+                     
+                     Style="{DynamicResource MaterialDesignOutlinedTextBox}"></TextBox>
+                        <Button x:Name="BrowseFolderSource" Content="Browse"
+                                MinHeight="{DynamicResource ButtonMinHeight}" MaxHeight="{DynamicResource ButtonMaxHeight}"
+                                MinWidth="120" MaxWidth="150"
+                                Background="{DynamicResource ButtonBackground}" Foreground="{DynamicResource ButtonForeground}"
+                                Margin="10"></Button>
+                    </StackPanel>
+                    <Button Margin="0,10,0,0" x:Name="UploadEpc" Content="Upload"
+                            MinWidth="300" MaxWidth="350" Background="{DynamicResource ButtonForeground}" Foreground="{DynamicResource MaterialDesignDarkForeground}"></Button>
+                </StackPanel>
+            </Grid>
+        </md:Card>
+    </Grid>
+</UserControl>
